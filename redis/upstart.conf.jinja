@@ -1,0 +1,25 @@
+description "start and stop the redis-server"
+version "1.0"
+author "Yangming Huang"
+
+start on (local-filesystems)
+stop on shutdown
+
+respawn
+respawn limit 10 5
+
+oom never
+expect fork
+
+setuid {{ user }}
+setgid {{ group }}
+
+pre-start script
+end script
+
+script
+  exec {{ run }} {{ conf }}
+end script
+
+post-stop script
+end script

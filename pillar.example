@@ -1,0 +1,5 @@
+redis:
+  download_url: http://download.redis.io/redis-stable.tar.gz
+  root_dir: /opt
+  home: /var/lib/redis
+  user: redis
